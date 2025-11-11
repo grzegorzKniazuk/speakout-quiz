@@ -2,7 +2,7 @@ name: Deploy React Router app to GitHub Pages
 
 on:
   push:
-    branches: [ main ]   # zmień, jeśli używasz innej gałęzi
+    branches: [ master ]   # zmień, jeśli używasz innej gałęzi
   workflow_dispatch:
 
 permissions:
