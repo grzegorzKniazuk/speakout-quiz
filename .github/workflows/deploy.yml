@@ -40,7 +40,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist    # jeśli Twój build ląduje gdzie indziej (np. dist/client), zmień to
+          path: dist/client    # jeśli Twój build ląduje gdzie indziej (np. dist/client), zmień to
 
   deploy:
     needs: build
