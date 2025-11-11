@@ -1,9 +1,9 @@
-name: Deploy React app to GitHub Pages
+name: Deploy React Router app to GitHub Pages
 
 on:
   push:
-    branches: [ master ]    # albo 'master', jeśli takiej używasz
-  workflow_dispatch:      # umożliwia ręczne odpalenie z zakładki Actions
+    branches: [ master ]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -27,20 +27,21 @@ jobs:
           node-version: 20
           cache: 'npm'
 
-      - name: Install dependencies
+      - name: Install deps
         run: npm ci
 
       - name: Build project
         run: npm run build
 
-      # 👇 ważne dla SPA z React Routerem – 404.html przekieruje na index
+      # 👇 ważne dla SPA z React Routerem + GitHub Pages
       - name: Create 404.html for SPA routing
-        run: cp dist/client/index.html dist/404.html
+        run: cp dist/client/index.html dist/client/404.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/client    # jeśli Twój build ląduje gdzie indziej (np. dist/client), zmień to
+          # 👈 TU JEST KLUCZOWA ZMIANA
+          path: dist/client
 
   deploy:
     needs: build
