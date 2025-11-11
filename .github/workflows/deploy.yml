@@ -2,7 +2,7 @@ name: Deploy React Router app to GitHub Pages
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]   # zmień, jeśli używasz innej gałęzi
   workflow_dispatch:
 
 permissions:
@@ -33,14 +33,12 @@ jobs:
       - name: Build project
         run: npm run build
 
-      # 👇 ważne dla SPA z React Routerem + GitHub Pages
       - name: Create 404.html for SPA routing
         run: cp dist/client/index.html dist/client/404.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # 👈 TU JEST KLUCZOWA ZMIANA
           path: dist/client
 
   deploy:
