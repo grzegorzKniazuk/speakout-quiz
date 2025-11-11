@@ -5,7 +5,7 @@ import { shuffleArray } from '~/utilities/shuffleArray';
 
 type QuestionType = 'mc';
 
-interface Question {
+interface VocabularyQuestion {
   id: number;
   unit: string;
   type: QuestionType;
@@ -14,7 +14,18 @@ interface Question {
   answer: string;
 }
 
-const questions: Question[] = [
+function shuffleQuestions(list: VocabularyQuestion[]): VocabularyQuestion[] {
+  // 1. Tasujemy kolejność pytań
+  const shuffledOrder = shuffleArray(list);
+
+  // 2. Dla każdego pytania tasujemy też options
+  return shuffledOrder.map((q) => ({
+    ...q,
+    options: shuffleArray(q.options),
+  }));
+}
+
+const questions: VocabularyQuestion[] = [
   // --- PERSONALITY ADJECTIVES (MAIN TEXT) ---
   {
     id: 1,
@@ -510,7 +521,7 @@ const VocabularyQuiz: React.FC = () => {
   const [ isCorrect, setIsCorrect ] = useState<boolean | null>(null);
   const [ score, setScore ] = useState<number>(0);
   const [ finished, setFinished ] = useState<boolean>(false);
-  const [ shuffledQuestions, setShuffledQuestions ] = useState(() => shuffleArray(questions));
+  const [ shuffledQuestions, setShuffledQuestions ] = useState(() => shuffleQuestions(questions));
 
   const currentQuestion = shuffledQuestions[currentIndex];
 

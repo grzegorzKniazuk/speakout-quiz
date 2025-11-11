@@ -15,6 +15,15 @@ interface GrammarQuestion {
   explanation: string; // krótkie wyjaśnienie
 }
 
+function shuffleQuestions(list: GrammarQuestion[]): GrammarQuestion[] {
+  const shuffledOrder = shuffleArray(list);
+
+  return shuffledOrder.map((q) => ({
+    ...q,
+    options: shuffleArray(q.options),
+  }));
+}
+
 const questions: GrammarQuestion[] = [
   // -------- PRESENT PERFECT SIMPLE vs CONTINUOUS – Z TEKSTU I GB --------
   {
@@ -368,7 +377,7 @@ const GrammarQuiz: React.FC = () => {
   const [ isCorrect, setIsCorrect ] = useState<boolean | null>(null);
   const [ score, setScore ] = useState<number>(0);
   const [ finished, setFinished ] = useState<boolean>(false);
-  const [ shuffledQuestions, setShuffledQuestions ] = useState(() => shuffleArray(questions));
+  const [ shuffledQuestions, setShuffledQuestions ] = useState(() => shuffleQuestions(questions));
 
   const currentQuestion = shuffledQuestions[currentIndex];
 
