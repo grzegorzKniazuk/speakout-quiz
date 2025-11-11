@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
+import { shuffleArray } from '~/utilities/shuffleArray';
 
 type QuestionType = 'mc';
 
@@ -509,8 +510,9 @@ const VocabularyQuiz: React.FC = () => {
   const [ isCorrect, setIsCorrect ] = useState<boolean | null>(null);
   const [ score, setScore ] = useState<number>(0);
   const [ finished, setFinished ] = useState<boolean>(false);
+  const [ shuffledQuestions, setShuffledQuestions ] = useState(() => shuffleArray(questions));
 
-  const currentQuestion = questions[currentIndex];
+  const currentQuestion = shuffledQuestions[currentIndex];
 
   const handleCheck = () => {
     if (!selected) return;
@@ -535,6 +537,7 @@ const VocabularyQuiz: React.FC = () => {
   };
 
   const handleRestart = () => {
+    setShuffledQuestions(shuffleArray(questions));
     setCurrentIndex(0);
     setSelected('');
     setShowFeedback(false);
@@ -550,7 +553,7 @@ const VocabularyQuiz: React.FC = () => {
           to="/"
           className="inline-flex items-center gap-2 text-sm text-slate-600 hover:text-slate-900 mb-4 transition"
         >
-          <ArrowLeft className="w-4 h-4" /> Back to Home
+          <ArrowLeft className="w-4 h-4"/> Back to Home
         </Link>
         <h1 className="text-2xl md:text-3xl font-bold mb-2 text-slate-800">
           Speakout B2 – Unit 1 Vocabulary Quiz
@@ -568,8 +571,8 @@ const VocabularyQuiz: React.FC = () => {
 
         {finished ? (
           <div className="mt-6">
-            <h2 className="text-xl font-semibold mb-2">Quiz finished 🎉</h2>
-            <p className="mb-4">
+            <h2 className="text-xl font-semibold mb-2 text-slate-800">Quiz finished 🎉</h2>
+            <p className="mb-4 text-slate-800">
               Your score:{' '}
               <span className="font-bold">
                 {score} / {questions.length}
