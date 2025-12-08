@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { BookOpen, Brain } from "lucide-react"; // opcjonalnie, jeśli używasz lucide-react
+import { BookOpen, Brain } from "lucide-react";
 
 const Home: React.FC = () => {
   return (
