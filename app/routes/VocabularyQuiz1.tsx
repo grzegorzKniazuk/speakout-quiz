@@ -514,7 +514,7 @@ const questions: VocabularyQuestion[] = [
 
 const normalise = (text: string): string => text.trim().toLowerCase();
 
-const VocabularyQuiz: React.FC = () => {
+const VocabularyQuiz1: React.FC = () => {
   const [ currentIndex, setCurrentIndex ] = useState<number>(0);
   const [ selected, setSelected ] = useState<string>('');
   const [ showFeedback, setShowFeedback ] = useState<boolean>(false);
@@ -696,4 +696,4 @@ const VocabularyQuiz: React.FC = () => {
   );
 };
 
-export default VocabularyQuiz;
+export default VocabularyQuiz1;

@@ -370,7 +370,7 @@ const questions: GrammarQuestion[] = [
 
 const normalise = (text: string): string => text.trim().toLowerCase();
 
-const GrammarQuiz: React.FC = () => {
+const GrammarQuiz1: React.FC = () => {
   const [ currentIndex, setCurrentIndex ] = useState<number>(0);
   const [ selected, setSelected ] = useState<string>('');
   const [ showFeedback, setShowFeedback ] = useState<boolean>(false);
@@ -562,4 +562,4 @@ const GrammarQuiz: React.FC = () => {
   );
 };
 
-export default GrammarQuiz;
+export default GrammarQuiz1;
