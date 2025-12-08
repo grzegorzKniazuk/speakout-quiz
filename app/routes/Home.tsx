@@ -4,7 +4,7 @@ import { BookOpen, Brain } from "lucide-react";
 
 const Home: React.FC = () => {
   return (
-    <div className="min-h-screen flex gap-6 items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200 p-6">
+    <div className="min-h-screen flex flex-col sm:flex-row gap-6 items-center justify-center bg-linear-to-br from-slate-100 to-slate-200 p-6">
       <div className="text-center max-w-md bg-white shadow-lg rounded-2xl p-8">
         <h1 className="text-3xl font-bold mb-6 text-slate-800">Speakout B2 – Unit 1</h1>
         <p className="text-slate-500 mb-8">Memory &amp; personality</p>
