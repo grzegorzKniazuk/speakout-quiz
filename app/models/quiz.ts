@@ -1,4 +1,5 @@
 export interface Quiz {
-  vocabularyTitle: string;
-  grammarTitle: string;
+  title: string;
+  vocabularyDescription: string;
+  grammarDescription: string;
 }

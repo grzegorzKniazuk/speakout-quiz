@@ -71,7 +71,7 @@ export default function VocabularyQuiz() {
         </Link>
 
         <h1 className="text-2xl md:text-3xl font-bold mb-2 text-slate-800">B2 – Unit {unitId} Vocabulary Quiz</h1>
-        <p className="text-sm text-slate-500 mb-4">{quiz?.vocabularyTitle}</p>
+        <p className="text-sm text-slate-500 mb-4">{quiz?.vocabularyDescription}</p>
 
         <div className="flex items-center justify-between mb-4 text-sm text-slate-600">
           <span>Question {currentIndex + 1} / {questions.length}</span>
