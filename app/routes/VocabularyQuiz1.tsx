@@ -560,23 +560,14 @@ const VocabularyQuiz1: React.FC = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-slate-100 p-4">
       <div className="w-full max-w-2xl bg-white shadow-lg rounded-2xl p-6 md:p-8">
-        <Link
-          to="/"
-          className="inline-flex items-center gap-2 text-sm text-slate-600 hover:text-slate-900 mb-4 transition"
-        >
-          <ArrowLeft className="w-4 h-4"/> Back to Home
+        <Link to="/" className="inline-flex items-center gap-2 text-sm text-slate-600 hover:text-slate-900 mb-4 transition">
+          <ArrowLeft className="w-4 h-4"/>Back to Home
         </Link>
-        <h1 className="text-2xl md:text-3xl font-bold mb-2 text-slate-800">
-          Speakout B2 – Unit 1 Vocabulary Quiz
-        </h1>
-        <p className="text-sm text-slate-500 mb-4">
-          Personality · Suffix adjectives · Memory · Idioms · Emotions & feelings
-        </p>
+        <h1 className="text-2xl md:text-3xl font-bold mb-2 text-slate-800">B2 – Unit 1 Vocabulary Quiz</h1>
+        <p className="text-sm text-slate-500 mb-4">Personality · Suffix adjectives · Memory · Idioms · Emotions & feelings</p>
 
         <div className="flex items-center justify-between mb-4 text-sm text-slate-600">
-          <span>
-            Question {currentIndex + 1} / {questions.length}
-          </span>
+          <span>Question {currentIndex + 1} / {questions.length}</span>
           <span>Score: {score}</span>
         </div>
 
@@ -584,17 +575,10 @@ const VocabularyQuiz1: React.FC = () => {
           <div className="mt-6">
             <h2 className="text-xl font-semibold mb-2 text-slate-800">Quiz finished 🎉</h2>
             <p className="mb-4 text-slate-800">
-              Your score:{' '}
-              <span className="font-bold">
-                {score} / {questions.length}
-              </span>
+              Your score:
+              <span className="font-bold">{score} / {questions.length}</span>
             </p>
-            <button
-              onClick={handleRestart}
-              className="px-4 py-2 rounded-xl border border-slate-300 text-slate-700 text-sm hover:bg-slate-50 transition"
-            >
-              Restart quiz
-            </button>
+            <button onClick={handleRestart} className="px-4 py-2 rounded-xl border border-slate-300 text-slate-700 text-sm hover:bg-slate-50 transition">Restart quiz</button>
           </div>
         ) : (
           <>
@@ -654,7 +638,7 @@ const VocabularyQuiz1: React.FC = () => {
                   <span>✅ Correct!</span>
                 ) : (
                   <span>
-                    ❌ Not quite. The correct answer is{' '}
+                    ❌ Not quite. The correct answer is
                     <strong>{currentQuestion.answer}</strong>.
                   </span>
                 )}
@@ -663,31 +647,12 @@ const VocabularyQuiz1: React.FC = () => {
 
             <div className="flex gap-3">
               {!showFeedback ? (
-                <button
-                  type="button"
-                  onClick={handleCheck}
-                  disabled={!selected}
-                  className="px-4 py-2 rounded-xl bg-blue-600 text-white text-sm font-medium disabled:bg-blue-200"
-                >
-                  Check answer
-                </button>
+                <button type="button" onClick={handleCheck} disabled={!selected} className="px-4 py-2 rounded-xl bg-blue-600 text-white text-sm font-medium disabled:bg-blue-200">Check answer</button>
               ) : (
-                <button
-                  type="button"
-                  onClick={handleNext}
-                  className="px-4 py-2 rounded-xl bg-slate-800 text-white text-sm font-medium"
-                >
-                  Next question
-                </button>
+                <button type="button" onClick={handleNext} className="px-4 py-2 rounded-xl bg-slate-800 text-white text-sm font-medium">Next question</button>
               )}
 
-              <button
-                type="button"
-                onClick={handleRestart}
-                className="px-4 py-2 rounded-xl border border-slate-300 text-slate-700 text-sm hover:bg-slate-50 transition"
-              >
-                Restart
-              </button>
+              <button type="button" onClick={handleRestart} className="px-4 py-2 rounded-xl border border-slate-300 text-slate-700 text-sm hover:bg-slate-50 transition">Restart</button>
             </div>
           </>
         )}

@@ -423,7 +423,7 @@ const GrammarQuiz1: React.FC = () => {
           <ArrowLeft className="w-4 h-4"/> Back to Home
         </Link>
         <h1 className="text-2xl md:text-3xl font-bold mb-2 text-slate-800">
-          Speakout B2 – Unit 1 Grammar Quiz
+          B2 – Unit 1 Grammar Quiz
         </h1>
         <p className="text-sm text-slate-500 mb-4">
           Present perfect · Infinitive vs -ing · While / whereas · Preferences
@@ -439,18 +439,8 @@ const GrammarQuiz1: React.FC = () => {
         {finished ? (
           <div className="mt-6">
             <h2 className="text-xl font-semibold mb-2 text-slate-800">Quiz finished 🎉</h2>
-            <p className="mb-4 text-slate-800">
-              Your score:{' '}
-              <span className="font-bold">
-                {score} / {questions.length}
-              </span>
-            </p>
-            <button
-              onClick={handleRestart}
-              className="px-4 py-2 rounded-xl border border-slate-300 text-slate-700 text-sm hover:bg-slate-50 transition"
-            >
-              Restart quiz
-            </button>
+            <p className="mb-4 text-slate-800">Your score: <span className="font-bold">{score} / {questions.length}</span></p>
+            <button onClick={handleRestart} className="px-4 py-2 rounded-xl border border-slate-300 text-slate-700 text-sm hover:bg-slate-50 transition">Restart quiz</button>
           </div>
         ) : (
           <>
@@ -516,7 +506,7 @@ const GrammarQuiz1: React.FC = () => {
                 ) : (
                   <div>
                     <p className="font-semibold text-sm">
-                      ❌ Not quite. The correct answer is{' '}
+                      ❌ Not quite. The correct answer is
                       <strong>{currentQuestion.answer}</strong>.
                     </p>
                     <p className="mt-1 text-sm">
