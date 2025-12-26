@@ -19,6 +19,8 @@ export const quizMap: Map<string, Quiz> = new Map<string, Quiz>([
   [ '8', quiz8 ],
 ]);
 
+export const quizList = Array.from(quizMap.values());
+
 export function getQuizByUnitId(unitId: string | undefined) {
   if (unitId && quizMap.has(unitId)) {
     return quizMap.get(unitId);
