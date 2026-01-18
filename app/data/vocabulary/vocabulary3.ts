@@ -216,4 +216,55 @@ export const vocabulary3: VocabularyQuestion[] = [
     options: [ 'impressive', 'disappointing', 'gripping', 'original' ],
     answer: 'disappointing',
   },
+
+  // ─────────────
+  // 3E – EMPHASIS (LANGUAGE)
+  // ─────────────
+  {
+    id: 29,
+    area: '3E – emphasis',
+    prompt: 'The word “seldom” means …',
+    options: [ 'often', 'rarely', 'always', 'quickly' ],
+    answer: 'rarely',
+  },
+  {
+    id: 30,
+    area: '3E – emphasis',
+    prompt: '“Under no circumstances” means …',
+    options: [ 'if you have time', 'only sometimes', 'never', 'as soon as possible' ],
+    answer: 'never',
+  },
+  {
+    id: 31,
+    area: '3E – emphasis',
+    prompt: '“On no account” means …',
+    options: [ 'for any reason', 'never', 'at the moment', 'in the end' ],
+    answer: 'never',
+  },
+  {
+    id: 32,
+    area: '3E – emphasis',
+    prompt: 'If you give “emphasis” to something, you …',
+    options: [ 'make it less important', 'make it more important', 'forget it', 'make it funny' ],
+    answer: 'make it more important',
+  },
+  {
+    id: 33,
+    area: '3E – emphasis',
+    prompt: 'An “emphatic” statement is …',
+    options: [ 'unclear', 'strong and definite', 'quiet and shy', 'very short' ],
+    answer: 'strong and definite',
+  },
+  {
+    id: 34,
+    area: '3E – emphasis',
+    prompt: 'Which sentence is the MOST emphatic?',
+    options: [
+      'I like that film.',
+      'I do like that film.',
+      'I liked that film yesterday.',
+      'I like films.',
+    ],
+    answer: 'I do like that film.',
+  },
 ];
